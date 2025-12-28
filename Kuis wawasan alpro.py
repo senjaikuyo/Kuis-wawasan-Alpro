@@ -165,7 +165,7 @@ class QuizApp(ctk.CTk):
 
         title = ctk.CTkLabel(
             self.main_frame,
-            text="KUIS WAWASAN BERHADIA",
+            text="KUIS WAWASAN BERHADIAH",
             font=ctk.CTkFont(size=26, weight="bold"),
             text_color="white",
         )
