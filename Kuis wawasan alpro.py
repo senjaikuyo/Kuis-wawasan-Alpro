@@ -400,13 +400,13 @@ class QuizApp(ctk.CTk):
         result_text = f"Kuis: {self.current_quiz_name}\n\nSkor kamu: {self.score} dari {total}\n"
 
         if self.score == total:
-            result_text += "\nara ara kok kamu gacor x king"
+            result_text += "\nWOW! Kamu jenius banget!"
             self.play_once("win.mp3")
         elif self.score >= total // 2:
-            result_text += "\nyah setengah doang bener"
+            result_text += "\nNot bad! Kamu cukup pintar."
             self.play_once("lose.mp3")
         else:
-            result_text += "\nkayaknya mirza lebih pinter deh dari kamu"
+            result_text += "\nYah, coba lagi ya!"
             self.play_once("lose.mp3")
 
         self.main_frame.configure(fg_color="#46178F")
