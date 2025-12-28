@@ -70,7 +70,7 @@ QUIZZES = {
         },
         {
             "question": "2. Semakin dikasih makan, aku semakin kecil. Aku apa?",
-            "options": ["Lilin", "Batu", "Kayu", "Lilin (salah ejaan)"],
+            "options": ["Lilin", "Batu", "Kayu", "Air"],
             "answer": "Lilin",
         },
         {
