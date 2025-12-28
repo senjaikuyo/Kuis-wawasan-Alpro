@@ -1,0 +1,78 @@
+4.1 Persiapan Lingkungan
+Langkah 1: Install Python
+•	Pastikan Python 3.7+ sudah terinstall
+•	Download dari https://www.python.org/downloads/
+Langkah 2: Install Library yang Diperlukan
+Buka Terminal/Command Prompt dan jalankan perintah:
+pip install customtkinter
+pip install pygame
+Langkah 3: Persiapkan File Program dan Audio
+Buat folder proyek dengan struktur:
+quiz_kw/
+├── quiz_kw.py (file program)
+├── lobby.mp3 (musik menu)
+├── quiz.mp3 (musik kuis)
+├── win.mp3 (efek suara menang)
+└── lose.mp3 (efek suara kalah)
+4.2 Menjalankan Program
+Cara 1: Via Terminal/Command Prompt
+cd path/to/quiz_kw
+python quiz_kw.py
+Cara 2: Via IDE (Visual Studio Code, PyCharm)
+•	Buka folder proyek
+•	Buka file quiz_kw.py
+•	Tekan Ctrl+F5 (VS Code) atau Run button
+•	Jendela aplikasi akan muncul
+4.3 Simulasi Penggunaan Aplikasi
+Skenario 1: Menyelesaikan Satu Kuis Lengkap
+1.	Jendela pembuka: Muncul window berukuran 600x450 px, latar ungu, judul "KUIS WAWASAN BERHADIA"
+2.	Menu Utama:
+o	User melihat tiga tombol kuis dengan warna biru
+o	User melihat tombol "Keluar" dengan warna merah
+3.	Pilih Kuis:
+o	User klik tombol "Kuis Matematika"
+o	Musik berubah dari lobby.mp3 ke quiz.mp3
+4.	Soal Pertama:
+o	Halaman menampilkan:
+	Header: "Kuis Matematika" dan "Time: 20"
+	Progress: "Soal 1 dari 5"
+	Pertanyaan: "1. Berapa hasil 12 + 7?"
+	Empat tombol warna dengan opsi: "17", "18", "19", "20"
+o	Timer mulai counting down dari 20 detik
+o	Teks timer berwarna putih saat >= 5 detik, berubah merah saat <= 5 detik
+5.	User Menjawab:
+o	User klik tombol "19" (warna kuning) sebelum waktu habis
+o	Program menyimpan jawaban, cek benar (answer = "19"), dan score = 1
+o	Lanjut otomatis ke soal 2
+6.	Soal Berikutnya: Proses yang sama untuk soal 2, 3, 4, 5
+7.	Halaman Hasil:
+o	Tampil: "Kuis: Kuis Matematika"
+o	Tampil: "Skor kamu: 5 dari 5"
+o	Jika semua benar, tampil: "ara ara kok kamu gacor x king"
+o	Musik win.mp3 diputar sekali
+o	Dua tombol: "Kembali ke Menu" dan "Keluar"
+8.	Kembali ke Menu: User klik "Kembali ke Menu", kembali ke halaman awal
+Skenario 2: Menggunakan Fitur Skip dan Timeout
+1.	Sama seperti skenario 1, sampai tampil soal pertama
+2.	User tidak menjawab dalam waktu:
+o	Timer mencapai 0 detik
+o	Jawaban otomatis tidak dievaluasi (selected_option tetap kosong)
+o	Program lanjut ke soal berikutnya tanpa menambah skor
+3.	User Klik Skip:
+o	Di soal ke-3, user klik tombol "Lewati Soal"
+o	Jawaban dianggap kosong (tidak benar), tidak ada penambahan skor
+o	Lanjut ke soal ke-4
+4.	User Klik Berhenti:
+o	Di soal ke-2, user klik tombol "Berhenti"
+o	Program langsung kembali ke menu utama
+o	Kuis dianggap berhenti, hasil tidak ditampilkan
+4.4 Output yang Diharapkan
+Pada Console/Terminal (jika ada error):
+Gagal load lobby.mp3: [Errno 2] No such file or directory: 'lobby.mp3'
+Program tetap berjalan, musik tidak ada, tapi fungsi lain normal.
+Pada Jendela Aplikasi:
+•	Tampilan profesional dengan warna ungu latar, tombol biru dan merah
+•	Font besar dan jelas
+•	Tombol responsif saat diklik
+•	Timer berjalan smooth
+•	Musik latar terdengar (jika file ada dan speaker aktif)
